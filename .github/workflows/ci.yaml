@@ -13,7 +13,7 @@ jobs:
                   sudo apt-get install postgresql
                   sudo service postgresql start
                   sudo -u postgres psql -c "CREATE DATABASE ${{env.DB_NAME}};"
-                  sudo -u postgres psql -c "CREATE USER ${{env.DB_USER}} WITH PASSWORD ${{env.DB_PASSWORD}} ;"
+                  sudo -u postgres psql -c "CREATE USER ${{env.DB_USER}} WITH PASSWORD '${{env.DB_PASSWORD}}';"
                   sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE ${{env.DB_NAME}} TO ${{env.DB_USER}};"
             - name: Checkout code
               uses: actions/checkout@v2
