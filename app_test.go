@@ -14,7 +14,7 @@ var a App
 
 func TestMain(m *testing.M) {
 
-	err := a.Initialize("localhost", "5437", "admin", "admin", "inventory_test")
+	err := a.Initialize("localhost", "5432", "admin", "admin", "inventory_test")
 	if err != nil {
 		log.Fatal("Could not initialize app:", err)
 	}
